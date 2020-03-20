@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "webpack --mode development; cp dist/index.html ./; cp dist/bundle.js ./",
+    "build": "webpack --mode development",
     "start": "npm run build; webpack-dev-server --open --mode development",
     "lint": "eslint src/*.js",
     "test": "jest",
@@ -30,6 +30,8 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
-    "jquery": "^3.4.1"
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
   }
 }
