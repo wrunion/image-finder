@@ -1,10 +1,20 @@
-/* The stylesheet link is broken somehow - the rules below don't work. No rules work. Figure out how to fix this. */
+header {
+  margin-top: 2em;
+}
+
 #main {
   font-family: 'Roboto Slab', serif;
 }
 
-#header-main {
+#title, #subtitle {
   font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+#topics {
+  margin-top: 3em;
+  font-size: 1.5em;
+  font-weight: 200;
 }
 
 /* REF:
