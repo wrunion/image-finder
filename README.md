@@ -1,8 +1,8 @@
-# Application Title
+# All The API Calls!
 
-#### Short description, 2/17/2020
+#### A single-page JavaScript app built with Webpack, to practice various types of API calls, 2/20/2020
 
-#### By **Winter A. Runion**
+#### By **Kent P. McKinney and Winter A. Runion**
 
 ### Description
 _Longer description._ 
@@ -39,4 +39,4 @@ Contact me if you have questions or comments at winterrunion@gmail.com
 ### License
 _This software is licensed under the MIT license._
 
-_Copyright (c) 2020 **Winter A. Runion**_
+_Copyright (c) 2020 **Kent P. McKinney and Winter A. Runion**_
