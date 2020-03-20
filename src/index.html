@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;900&family=Roboto+Slab:wght@100;200;300&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>API Practice</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;900&family=Roboto+Slab:wght@100;300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;500;900&family=Roboto+Slab:wght@100;300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css">
 </head>
 <body>
   <div class="container" id="main">
-    <h1 class="text-center" id="header-main">Fast Fun Facts!</h1>
-    <h3 class="grey-text text-center text-muted">Pick a topic below to learn something new!</h3>
+
+    <header class="text-center">
+      <h1 id="title">Fast Fun Facts!</h1>
+      <h3 id="subtitle" class="grey-text text-muted">Pick a topic below to learn something new!</h3>
+    </header>
+    
     <!-- These should all be accordions, so if someone clicks on a paragraph, it should expand to show UI options for that topic  -->
-    <div id="topics">
-      <div class="text-center text-muted" id="center-main">
+    <section id="topics">
+      <div class="text-center" id="center-main">
         <p>Help me find my stolen bike</p>
         <p>Show me the weather in my city</p>
         <p>Show me a pretty picture</p>
         <p>Show me an interesting news article</p>
         <p>Show me a Cat Fact!</p>
       </div>
-    </div>
+    </section>
+
   </div>
 </body>
 </html>
