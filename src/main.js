@@ -29,9 +29,21 @@ $(document).ready(function() {
   $("#bike").click(function() {
     $("#bike-input-div").toggle();
   });
+  // This isn't working. Don't know why.
   $("#weather").click(function() {
     $("#weather-input-div").toggle();
   });
+  $("#photo").click(function() {
+    $("#photo-input-div").toggle();
+  });
+  $("#news").click(function() {
+    $("#news-input-div").toggle();
+  });
+  $("#cat").click(function() {
+    $("#cat-input-div").toggle();
+  });
+
+
   // $(".clickable-p").click(function() {
   //   const id = `"#this.id-input-div"`;
   //   $(id).show();

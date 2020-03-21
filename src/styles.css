@@ -25,12 +25,17 @@ input {
   display: none;
 }
 
+/* .accordion-item {
+
+} */
+
+button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 /* REF:
 How to call our custom fonts:
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto Slab', serif;
-
--Raleway has weights of 200,500, and 900;
--Roboto Slab has weights of 100 and 300;
--More weights are available on googlefonts
 */
