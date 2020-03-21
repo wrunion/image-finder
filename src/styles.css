@@ -34,6 +34,11 @@ button {
   margin-bottom: 1em;
 }
 
+#cat-button {
+  margin-top: .25em;
+  margin-bottom: .5em;
+}
+
 /* REF:
 How to call our custom fonts:
 font-family: 'Raleway', sans-serif;

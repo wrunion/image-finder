@@ -18,7 +18,7 @@
     <!-- These should all be accordion-items, so if someone clicks on a paragraph, it should expand to show UI options for that topic  -->
     <section id="topics">
       <div class="text-center" id="center-main">
-
+        <!-- Bike div  -->
         <div id="bike-div">
           <p class="clickable-p" id="bike">Help me find my stolen bike</p>
           <div class="hidden-start accordion-item" id="bike-input-div">
@@ -26,7 +26,7 @@
             <button type="submit" class="button btn btn-primary" id="bike-button">Find my bike!</button>
           </div>
         </div>
-        <!-- This isn't working. Don't know why  -->
+        <!-- Weather div  -->
         <div id="weather-div">
           <p  class="clickable-p" id="weather">Show me the weather in my city</p>
           <div class="hidden-start accordion-item" id="weather-input-div">
@@ -34,31 +34,32 @@
             <button type="submit" class="button btn btn-warning" id="weather-button">Find my weather!</button>
           </div>
         </div>
-
-      <div id="photo-div">
-        <p  class="clickable-p" id="photo">Show me a cool photo</p>
-        <div class="hidden-start accordion-item" id="photo-input-div">
-          <input type="text" id="photo-input" class="input text-input"  placeholder="Keyword"><br>
-          <button type="submit" class="button btn btn-warning" id="photo-button">Find my photo!</button>
+        <!-- Photo div  -->
+        <div id="photo-div">
+          <p  class="clickable-p" id="photo">Show me a cool photo</p>
+          <div class="hidden-start accordion-item" id="photo-input-div">
+            <input type="text" id="photo-input" class="input text-input"  placeholder="Photo Keyword"><br>
+            <button type="submit" class="button btn btn-warning" id="photo-button">Find my photo!</button>
+          </div>
+        </div>
+        <!-- News div  -->
+        <div id="news-div">
+          <p  class="clickable-p" id="news">Show me an interesting news article</p>
+          <div class="hidden-start accordion-item" id="news-input-div">
+            <input type="text" id="news-input" class="input text-input"  placeholder="Article Keyword"><br>
+            <button type="submit" class="button btn btn-warning" id="news-button">Find a news article!</button>
+          </div>
+        </div>
+        <!-- Cat div  -->
+        <div id="cat-div">
+          <p class="clickable-p" id="cat">Show me a cat fact!</p>
+          <div class="hidden-start accordion-item" id="cat-input-div">
+            <button type="submit" class="button btn btn-primary" id="cat-button">Click for a cat fact!</button>
+          </div>
         </div>
       </div>
+    </section>
 
-    <div id="news-div">
-      <p  class="clickable-p" id="news">Show me an interesting news article</p>
-      <div class="hidden-start accordion-item" id="news-input-div">
-        <input type="text" id="news-input" class="input text-input"  placeholder="Keyword"><br>
-        <button type="submit" class="button btn btn-warning" id="news-button">Find a news article!</button>
-      </div>
-    </div>
-    <div id="cat-div">
-      <p class="clickable-p" id="cat">Show me a cat fact!</p>
-      <div class="hidden-start accordion-item" id="cat-input-div">
-        <button type="submit" class="button btn btn-primary" id="cat-button">Show me a cat fact!</button>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  </div>
+  </div> <!--#main-->
 </body>
 </html>
