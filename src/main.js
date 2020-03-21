@@ -5,7 +5,9 @@ import $ from 'jquery';
 
 $(document).ready(function() {
 
-  /* How do I refactor this into a single function? */
+  /* How do I refactor this into a single function? 
+  I can't get "this" binding to work
+  */
   $("#bike").click(function() {
     $(".accordion-item").hide();
     $("#bike-input-div").toggle();
@@ -26,8 +28,5 @@ $(document).ready(function() {
     $(".accordion-item").hide();
     $("#cat-input-div").toggle();
   });
-
-
-
 
 });
