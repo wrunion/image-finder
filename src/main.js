@@ -5,28 +5,48 @@ import $ from 'jquery';
 
 $(document).ready(function() {
 
-  /* How do I refactor this into a single function? 
-  I can't get "this" binding to work
-  */
-  $("#bike").click(function() {
-    $(".accordion-item").hide();
-    $("#bike-input-div").toggle();
+
+
+  $(".clickable-p").click(function() {
+    $('.accordion-item').hide();
+    $(this).siblings("div").show();
   });
-  $("#weather").click(function() {
-    $(".accordion-item").hide();
-    $("#weather-input-div").toggle();
+  
+  $("#weather-button").click(function() {
+    const city = $("#weather-input").val();
+    (async () => {
+      try {
+        // let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.OW_API_KEY}`);
+        let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=129d36f95d0264a22fce62f61459dad0`);
+        let jsonifiedResponse;
+        if (response.ok && response.status === 200) {
+          jsonifiedResponse = await response.json();
+        } else {
+          jsonifiedResponse = false;
+        }
+        $('#results').append(jsonifiedResponse.weather[0].description);
+      } catch(e) {
+        alert(e.message);
+      }
+    })();
   });
-  $("#photo").click(function() {
-    $(".accordion-item").hide();
-    $("#photo-input-div").toggle();
-  });
-  $("#news").click(function() {
-    $(".accordion-item").hide();
-    $("#news-input-div").toggle();
-  });
-  $("#cat").click(function() {
-    $(".accordion-item").hide();
-    $("#cat-input-div").toggle();
-  });
+  
+  // (async () => {
+  //   try {
+  //     let response = await fetch(`https://bikeindex.org/api/v3/bikes_search/stolen?per_page=10`);
+  //     let jsonifiedResponse;
+  //     if (response.ok && response.status == 200) {
+  //       jsonifiedResponse = await response.json();
+  //     } else {
+  //       jsonifiedResponse = false;
+  //     }
+  //     for (let bike of jsonifiedResponse.bikes) {
+  //       $('#results').append(`${bike.serial}<br>`)
+  //     }
+  //     // $('#results').append(jsonifiedResponse.bikes[0].serial);
+  //   } catch(e) {
+  //     alert(e.message);
+  //   }
+  // })();
 
 });

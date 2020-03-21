@@ -44,3 +44,7 @@ How to call our custom fonts:
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto Slab', serif;
 */
+
+.green {
+  background-color: green;
+}
