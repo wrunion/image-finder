@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;900&family=Roboto+Slab:wght@100;200;300&display=swap" rel="stylesheet">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>API Practice</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;500;900&family=Roboto+Slab:wght@100;300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;900&family=Roboto+Slab:wght@100;200;300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css">
 </head>
 <body>
@@ -20,11 +18,30 @@
     <!-- These should all be accordions, so if someone clicks on a paragraph, it should expand to show UI options for that topic  -->
     <section id="topics">
       <div class="text-center" id="center-main">
-        <p>Help me find my stolen bike</p>
-        <p>Show me the weather in my city</p>
-        <p>Show me a pretty picture</p>
-        <p>Show me an interesting news article</p>
-        <p>Show me a Cat Fact!</p>
+
+        <div id="bike-div">
+          <p class="clickable-p" id="bike">Help me find my stolen bike</p>
+          <div class="hidden-start accordion" id="bike-input-div">
+            <input type="dropdown" id="bike-input" class="input dropdown-input"  placeholder="Bike description"><br>
+            <button type="submit" class="button btn btn-primary" id="bike-button">Find my bike!</button>
+          </div>
+        </div>
+        <div id="weather-div">
+          <p  class="clickable-p" id="weather">Show me the weather in my city</p>
+          <div class="hidden-start accordion" id="weather-input-div">
+            <input type="dropdown" id="weather-input" class="input dropdown-input"  placeholder="City, State"><br>
+            <button type="submit" class="button btn btn-warning" id="weather-button">Find my weather!</button>
+        </div>
+      </div>
+      <div id="photo-div">
+        <p  class="clickable-p" id="photo">Show me a pretty picture</p>
+        <div class="hidden-start accordion" id="photo-input-div">
+          <input type="dropdown" id="photo-input" class="input dropdown-input"  placeholder="City, State"><br>
+          <button type="submit" class="button btn btn-warning" id="photo-button">Find my photo!</button>
+      </div>
+    </div>
+        <p class="clickable-p" >Show me an interesting news article</p>
+        <p  class="clickable-p" >Show me a Cat Fact!</p>
       </div>
     </section>
 

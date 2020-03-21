@@ -17,6 +17,14 @@ header {
   font-weight: 200;
 }
 
+input {
+  text-align: center;
+}
+
+.hidden-start {
+  display: none;
+}
+
 /* REF:
 How to call our custom fonts:
 font-family: 'Raleway', sans-serif;
