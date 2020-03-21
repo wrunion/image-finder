@@ -39,6 +39,8 @@ button {
   margin-bottom: .5em;
 }
 
+
+
 /* REF:
 How to call our custom fonts:
 font-family: 'Raleway', sans-serif;
@@ -47,4 +49,8 @@ font-family: 'Roboto Slab', serif;
 
 .green {
   background-color: green;
+}
+
+p {
+  cursor: pointer;
 }

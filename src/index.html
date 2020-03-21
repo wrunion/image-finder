@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<link>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>API Practice</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;900&family=Roboto+Slab:wght@100;200;300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css">
-</link>
+</head>
+
 <body>
   <div class="container" id="main">
 
@@ -51,10 +52,11 @@
           </div>
         </div>
         <!-- Cat div  -->
-        <div id="cat-div">
-          <p class="clickable-p" id="cat">Show me a cat fact!</p>
-          <div class="hidden-start accordion-item" id="cat-input-div">
-            <button type="button" class="button btn btn-primary" id="cat-button">Click for a cat fact!</button>
+        <div id="poke-div">
+          <p class="clickable-p" id="poke">Show me a pokemon's moves!</p>
+          <div class="hidden-start accordion-item" id="poke-input-div">
+            <input type="text" id="poke-input" class="input text-input"  placeholder="pikachu"><br>
+            <button type="button" class="button btn btn-primary" id="poke-button">Get the moves!</button>
           </div>
         </div>
       </div>
