@@ -12,6 +12,12 @@
   * We probably need an extra extension for that.
 * If we haven't already, install an extension for managing images. I don't think we have one now.  
 
+### Kent Notes
+  * TODO:
+    * add arrows for clickable paragraphs
+
+### Winter Notes
+
 <!-- ### Description
 _Longer description._ 
 
