@@ -158,7 +158,20 @@ $(document).ready(function() {
 			mapCreated = true;
 		}
 		else {
-			
+			let locations = [];
+			locations.push({title: 'Epicodus', location: {lat: 45.520712, lng: -122.677377}});
+			locations.push({title: `The Best Starbucks Ever`, location: {lat: 45.520690, lng: -122.678031}});
+			for (let i = 0; i < locations.length; i++) {
+					let position = locations[i].location;
+					let title = locations[i].title;
+					let marker = new google.maps.Marker({
+							map: map,
+							position: position,
+							title: title,
+							animation: google.maps.Animation.DROP,
+							id: i
+					});
+			}
 		}
 	});
 
