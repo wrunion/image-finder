@@ -6,6 +6,12 @@ header {
   font-family: 'Roboto Slab', serif;
 }
 
+#map {
+  overflow: auto;
+  width: 480px;
+  height: 500px;
+}
+
 #title, #subtitle {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
