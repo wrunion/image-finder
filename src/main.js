@@ -7,15 +7,17 @@ const openWeatherApiKey = process.env.OPEN_WEATHER_API_KEY;
 const unsplashApiKey = process.env.UNSPLASH_API_KEY;
 const nytApiKey = process.env.NYT_API_KEY;
 const mapsKey = process.env.MAPS_API_KEY;
+let mapCreated = false;
 
 $(document).ready(function() {
 	$('.clickable-p').click(function() {
+		$('#map').hide();
+		$('#results').empty();
 		$('.accordion-item').hide();
 		$(this).siblings('div').show();
 	});
 
 	$('#weather-button').click(function() {
-		$('#results').text('');
 		const city = $('#weather-input').val();
 		(async () => {
 			try {
@@ -36,7 +38,6 @@ $(document).ready(function() {
 	});
 
 	$('#bike-button').click(function() {
-		$('#results').text('');
 		(async () => {
 			try {
 				let response = await fetch(`https://bikeindex.org/api/v3/bikes_search/stolen?per_page=10`);
@@ -57,7 +58,6 @@ $(document).ready(function() {
 	});
 
 	$('#photo-button').click(function() {
-		$('#results').text('');
 		const city = $('#weather-input').val();
 		(async () => {
 			try {
@@ -79,7 +79,6 @@ $(document).ready(function() {
 	});
 
 	$('#news-button').click(function() {
-		$('#results').text('');
 		const keyword = $('#news-input').val();
 		(async () => {
 			try {
@@ -103,8 +102,6 @@ $(document).ready(function() {
 	});
 
 	$('#poke-button').click(function() {
-		$('#results').text('');
-		$('#results').empty();
 		const poke = $('#poke-input').val().toLowerCase();
 		(async () => {
 			try {
@@ -131,38 +128,38 @@ $(document).ready(function() {
 	});
 
 	$('#maps-button').click(function() {
-    $('#results').empty();
-    let div = document.createElement("div");
-    div.id = 'map';
-    $('#results').append(div);
-    let script = document.createElement('script');
-    script.innerHTML = `
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'),
-				 { center: {lat: 45.519521, lng: -122.677410}, zoom: 13 });
-				 
-				 let locations = [];
-				 locations.push({title: 'Epicodus', location: {lat: 45.520712, lng: -122.677377}});
-
-				 for (let i = 0; i < locations.length; i++) {
-          let position = locations[i].location;
-          let title = locations[i].title;
-          let marker = new google.maps.Marker({
-            map: map,
-            position: position,
-            title: title,
-            animation: google.maps.Animation.DROP,
-            id: i
-          });
-        }
-
-      }`;
-		script.type = 'text/javascript';
-    $('body').append(script);
-    script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.setAttribute('src', `https://maps.googleapis.com/maps/api/js?key=${mapsKey}&callback=initMap`);
-    $('body').append(script);
+		$('#map').show();
+		if (!mapCreated) {
+			let script = document.createElement('script');
+			script.innerHTML = `
+				function initMap() {
+					map = new google.maps.Map(document.getElementById('map'),
+					{ center: {lat: 45.519521, lng: -122.677410}, zoom: 13 });
+					let locations = [];
+					locations.push({title: 'Epicodus', location: {lat: 45.520712, lng: -122.677377}});
+					for (let i = 0; i < locations.length; i++) {
+						let position = locations[i].location;
+						let title = locations[i].title;
+						let marker = new google.maps.Marker({
+							map: map,
+							position: position,
+							title: title,
+							animation: google.maps.Animation.DROP,
+							id: i
+						});
+					}
+				}`;
+			script.type = 'text/javascript';
+			$('body').append(script);
+			script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.setAttribute('src', `https://maps.googleapis.com/maps/api/js?key=${mapsKey}&callback=initMap`);
+			$('body').append(script);
+			mapCreated = true;
+		}
+		else {
+			
+		}
 	});
 
 	$('input').bind('keypress', function(e) {
