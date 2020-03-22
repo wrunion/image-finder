@@ -8,12 +8,14 @@ const unsplashApiKey = process.env.UNSPLASH_API_KEY;
 const nytApiKey = process.env.NYT_API_KEY;
 
 $(document).ready(function() {
+
   $(".clickable-p").click(function() {
     $('.accordion-item').hide();
     $(this).siblings("div").show();
   });
   
   $("#weather-button").click(function() {
+    $('#results').text("");
     const city = $("#weather-input").val();
     (async () => {
       try {
@@ -32,7 +34,7 @@ $(document).ready(function() {
   });
   
   $("#bike-button").click(function() {
-
+    $('#results').text("");
     (async () => {
       try {
         let response = await fetch(`https://bikeindex.org/api/v3/bikes_search/stolen?per_page=10`);
@@ -53,6 +55,7 @@ $(document).ready(function() {
   });
 
   $("#photo-button").click(function() {
+    $('#results').text("");
     const city = $("#weather-input").val();
     (async () => {
       try {
@@ -72,6 +75,7 @@ $(document).ready(function() {
   });
 
   $("#news-button").click(function() {
+    $('#results').text("");
     const keyword = $("#news-input").val();
     (async () => {
       try {
@@ -93,6 +97,7 @@ $(document).ready(function() {
   });
 
   $("#poke-button").click(function() {
+    $('#results').text("");
     $('#results').empty();
     const poke = $("#poke-input").val().toLowerCase();
     (async () => {
