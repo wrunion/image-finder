@@ -11,10 +11,19 @@ header {
   font-weight: 300;
 }
 
-#topics {
+.subheading {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 1.75em;
+  text-align: center;
+  margin: .5em;
+}
+
+#topics, #results-section {
   margin-top: 3em;
   font-size: 1.5em;
   font-weight: 200;
+  text-align: center;
 }
 
 input {
@@ -43,7 +52,7 @@ button {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 1.5em;
-  text-align: center;
+  /* text-align: center; */
 }
 
 

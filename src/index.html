@@ -16,8 +16,10 @@
       <h3 id="subtitle" class="grey-text text-muted">Pick a topic below to learn something new!</h3>
     </header>
     
-
-    <section id="topics">
+    <div class="row">
+      <div class="col" id="column-1">
+      <section id="topics">
+        <h2 class="subheading">Topics</h2>
       <div class="text-center" id="center-main">
         <!-- Bike div  -->
         <div id="bike-div">
@@ -61,12 +63,61 @@
         </div>
       </div>
     </section>
-    <!-- Results  -->
-    <div id="results">
-
-
     </div>
 
-  </div> <!--#main-->
+    <!-- Results  -->
+    <div class="col" id="column-2">
+      <section id="results-section">
+      <h2 class="subheading">Results</h2>
+      <!-- General  -->
+      <div id="bike-div">
+        <p class="clickable-p" id="bike">Help me find my stolen bike</p>
+        <div class="hidden-start accordion-item" id="bike-input-div">
+          <input type="text" id="bike-input" class="input text-input"  placeholder="Bike description"><br>
+          <button type="button" class="button btn btn-primary" id="bike-button">Find my bike!</button>
+        </div>
+      </section>
+      </div>
+      <!-- Weat
+      <div id="results">
+        <ul class="results-ul" id="results-ul">
+
+
+        </ul>
+      </div>
+      <!-- Bike  -->
+      <div id="bike-results" class="results-div">
+        <ul class="results-ul">
+
+        </ul>
+      </div>
+      <!-- Weather  -->
+      <div id="weather-results" class="results-div">
+        <ul class="results-ul">
+
+        </ul>
+      </div>
+      <!-- News  -->
+      <div id="news-results" class="results-div">
+        <ul class="results-ul">
+
+        </ul>
+      </div>
+      <!-- Starwars  -->
+      <div id="starwars-results" class="results-div">
+        <ul class="results-ul">
+
+        </ul>
+      </div>
+      <!-- Pokemon  -->
+      <div id="pokemon-results" class="results-div">
+        <ul class="results-ul">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div> <!--#main-->
 </body>
 </html>
