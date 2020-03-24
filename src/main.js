@@ -6,6 +6,8 @@ import $ from 'jquery';
 import './../.env';
 import { makeApiCall } from './apiCall.js';
 
+console.log(process.env.API_KEY);
+
 $(document).ready(function() {
   $('form').submit(function() {
     const symptom = $('#primary-symptom-input').val().toLowerCase();
