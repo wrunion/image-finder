@@ -6,17 +6,21 @@ export async function makeApiCall(searchTerm) {
   try {
     let response = await fetch(`https://api.betterdoctor.com/2016-03-01/conditions?user_key=${process.env.API_KEY}
     `);
+    console.log(response.status);
     let parsedResponse;
     if (response.ok && response.status === 200) {
       parsedResponse = await response.json();
-    } else {
+      showResults(parsedResponse);
+    } else if (response.status === 401 || response.status === 1000) { 
       parsedResponse = false;
+      return `There has been a site error. Please try again later.`;
+    } else if (response.status === 400 || response.status === 404 || response.status === 405) {
+      parsedResponse = false;
+      return `No results found. Please check your search terms and try again`;
+    } else {
+      return `There has been a server error. Please wait a moment, and try your search again`;
     }
-
-    showResults(parsedResponse);
-    
   } catch(e) {
-    showResults(false);
     console.log(e.message);
   }
 }
