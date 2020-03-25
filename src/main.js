@@ -4,8 +4,6 @@ import './styles.css';
 import $ from 'jquery';
 import './../.env';
 
-const unsplashAccessKey = "YOUR_UNSPLASH_ACCESS_KEY_HERE";
-
 function capitalizeString(str) {
   return str.charAt(0).toUpperCase() + str.substring(1);
 }
@@ -51,8 +49,8 @@ $(document).ready(function() {
         const image = data.results[imageNum];
 
         let htmlContent = `<figure>
-          <img src="${image.urls.regular}" alt="${firstImage.alt_description}" class="img-fluid">
-          <figcaption>${displayKeyword} by ${firstImage.user.name}</figcaption>
+          <img src="${image.urls.regular}" alt="${image.alt_description}" class="img-fluid">
+          <figcaption>${displayKeyword} by ${image.user.name}</figcaption>
         </figure>`;
        
         $("#results").append(htmlContent);

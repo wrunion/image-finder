@@ -3,6 +3,7 @@
 import './styles.css';
 import $ from 'jquery';
 import './../.env';
+import './index.html';
 
 function capitalizeString(str) {
   return str.charAt(0).toUpperCase() + str.substring(1);
@@ -23,7 +24,7 @@ $(document).ready(function() {
     const displayKeyword = capitalizeString(keyword);
     (async () => {
       try {
-        let response = await fetch(`https://api.unsplash.com/search/photos?query=${keyword}&client_id=${unsplashAccessKey}`);
+        let response = await fetch(`https://api.unsplash.com/search/photos?query=${keyword}&client_id=${process.env.API_KEY}`);
         let parsedResponse;
         if (response.ok && response.status === 200) {
           parsedResponse = await response.json();
@@ -52,3 +53,4 @@ $(document).ready(function() {
       }
     }; 
   });
+});
