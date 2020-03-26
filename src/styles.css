@@ -48,21 +48,6 @@ button {
   margin-bottom: 1em;
 }
 
-#cat-button {
-  margin-top: .25em;
-  margin-bottom: .5em;
-}
-
-/* REF:
-How to call our custom fonts:
-font-family: 'Raleway', sans-serif;
-font-family: 'Roboto Slab', serif;
-*/
-
-.green {
-  background-color: green;
-}
-
-p {
-  cursor: pointer;
+.photo-text {
+  font-size: .75em;
 }
