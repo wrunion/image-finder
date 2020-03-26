@@ -3,6 +3,7 @@
 import './styles.css';
 import $ from 'jquery';
 import './../.env';
+import { makeApiCall } from './apiCall';
 
 function generateRandomNumber(highestNum) {
   return Math.floor(Math.random()*highestNum);
