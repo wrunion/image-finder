@@ -4,13 +4,13 @@ import './styles.css';
 import $ from 'jquery';
 import './../.env';
 
-function capitalizeString(str) {
-  return str.charAt(0).toUpperCase() + str.substring(1);
-}
-
 function generateRandomNumber(highestNum) {
   return Math.floor(Math.random()*highestNum);
 }
+
+// APIKEY: JQazSjOow5MmLIMN_e0XQ3abqYxckGbYfSykhZ8Hnfo
+
+//`https://api.unsplash.com/search/photos?query=$elephan&client_id=JQazSjOow5MmLIMN_e0XQ3abqYxckGbYfSykhZ8Hnfo`
 
 /* REFERENCE: https://unsplash.com/developers */
 
@@ -24,7 +24,6 @@ $(document).ready(function() {
   $("#keyword-button").click(function() {
     $('#results').empty();
     const keyword = $("#keyword-input").val().toLowerCase();
-    const displayKeyword = capitalizeString(keyword);
     (async () => {
       try {
         let response = await fetch(`https://api.unsplash.com/search/photos?query=${keyword}&client_id=${process.env.API_KEY}`);
@@ -50,11 +49,17 @@ $(document).ready(function() {
         console.log(data.results);
         const imageNum = generateRandomNumber(data.results.length);
         const image = data.results[imageNum];
+        const photoCredit = `https://unsplash.com/@zoeeee_`;
 
         let htmlContent = `<figure>
           <img src="${image.urls.regular}" alt="${image.alt_description}" class="img-fluid">
-          <figcaption>${displayKeyword} by ${image.user.name}</figcaption>
+          <figcaption>Photo by by <a href="${image.user.links.html}" target="_blank">${image.user.name}</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral" target="_blank">Unsplash</a></figcaption>
         </figure>`;
+
+        // Photo by <a href="https://unsplash.com/@anniespratt?utm_source=your_app_name&utm_medium=referral">Annie Spratt</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">Unsplash</a>
+        
+        //https://unsplash.com/@zoeeee_
+
        
         $("#results").append(htmlContent);
       } else {
