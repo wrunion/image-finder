@@ -8,8 +8,8 @@ function capitalizeString(str) {
   return str.charAt(0).toUpperCase() + str.substring(1);
 }
 
-function generateRandomNumber() {
-  return Math.floor(Math.random()*10+1);
+function generateRandomNumber(highestNum) {
+  return Math.floor(Math.random()*highestNum);
 }
 
 /* REFERENCE: https://unsplash.com/developers */
@@ -28,12 +28,14 @@ $(document).ready(function() {
     (async () => {
       try {
         let response = await fetch(`https://api.unsplash.com/search/photos?query=${keyword}&client_id=${process.env.API_KEY}`);
+        console.log(response);
         let parsedResponse;
         if (response.ok && response.status === 200) {
           parsedResponse = await response.json();
         } else {
           parsedResponse = false;
         }
+        console.log(parsedResponse);
         showPhoto(parsedResponse);
       } catch(e) {
         showPhoto(false);
@@ -45,7 +47,8 @@ $(document).ready(function() {
     const showPhoto = function(data) {
       if (data && data.results && data.results[0]) {
         /* Generate a random number, so that a user searching the same term multiple times can see a variety of outputs */
-        const imageNum = generateRandomNumber();
+        console.log(data.results);
+        const imageNum = generateRandomNumber(data.results.length);
         const image = data.results[imageNum];
 
         let htmlContent = `<figure>
