@@ -2,10 +2,7 @@
 import './styles.css';
 import $ from 'jquery';
 import './../.env';
-
-function generateRandomNumber(highestNum) {
-  return Math.floor(Math.random()*highestNum);
-}
+import { generateRandomNumber } from './randomNum';
 
 /* REFERENCE: https://unsplash.com/developers */
 
