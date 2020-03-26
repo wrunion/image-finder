@@ -8,10 +8,6 @@ function generateRandomNumber(highestNum) {
   return Math.floor(Math.random()*highestNum);
 }
 
-// APIKEY: JQazSjOow5MmLIMN_e0XQ3abqYxckGbYfSykhZ8Hnfo
-
-//`https://api.unsplash.com/search/photos?query=$elephan&client_id=JQazSjOow5MmLIMN_e0XQ3abqYxckGbYfSykhZ8Hnfo`
-
 /* REFERENCE: https://unsplash.com/developers */
 
 $(document).ready(function() {
@@ -26,7 +22,7 @@ $(document).ready(function() {
     const keyword = $("#keyword-input").val().toLowerCase();
     (async () => {
       try {
-        let response = await fetch(`https://api.unsplash.com/search/photos?query=${keyword}&client_id=${process.env.API_KEY}`);
+        let response = await fetch(`https://api.unsplash.com/search/photos?query=${keyword}&client_id=${process.env.API_KEY}&per_page=30`);
         console.log(response);
         let parsedResponse;
         if (response.ok && response.status === 200) {
@@ -44,59 +40,24 @@ $(document).ready(function() {
     })();
 
     const showPhoto = function(data) {
+      /* Check if there is at least one result */
       if (data && data.results && data.results[0]) {
+
         /* Generate a random number, so that a user searching the same term multiple times can see a variety of outputs */
+
         console.log(data.results);
         const imageNum = generateRandomNumber(data.results.length);
         const image = data.results[imageNum];
-        const photoCredit = `https://unsplash.com/@zoeeee_`;
 
         let htmlContent = `<figure>
           <img src="${image.urls.regular}" alt="${image.alt_description}" class="img-fluid">
-          <figcaption>Photo by by <a href="${image.user.links.html}" target="_blank">${image.user.name}</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral" target="_blank">Unsplash</a></figcaption>
+          <figcaption>Photo by <a href="${image.user.links.html}?utm_source=API Practice Student Project&utm_medium=referral" target="_blank">${image.user.name}</a> on <a href="https://unsplash.com/?utm_source=API Practice Student Project&utm_medium=referral" target="_blank">Unsplash</a></figcaption>
         </figure>`;
 
-        // Photo by <a href="https://unsplash.com/@anniespratt?utm_source=your_app_name&utm_medium=referral">Annie Spratt</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">Unsplash</a>
-        
-        //https://unsplash.com/@zoeeee_
-
-       
         $("#results").append(htmlContent);
       } else {
         $("#results").append(`No results found. Please check your inputs and try again!`);
       }
     }; 
-  });
-
-
-  // (async () => {
-  //   try {
-  //     let response = await fetch(`https://api.unsplash.com/search/photos?query=${keyword}`);
-  //     let jsonifiedResponse;
-  //     if (response.ok && response.status === 200) {
-  //       jsonifiedResponse = await response.json();
-  //     } else {
-  //       jsonifiedResponse = false;
-  //     }
-  //     let myResult = jsonifiedResponse;
-  //     if (myResult) {
-  //       console.log(myResult);
-  //     }
-  //     else {
-  //       console.log('error this is else');
-  //       // $('#results').append(`Couldn't find a pokemon named '${poke}'. Please check spelling and try again!`);
-  //     }
-        
-  //   } catch(e) {
-  //     alert(e.message);
-  //   }
-  // })();
-
-
-  /* Lets the user press "enter" to press button */
-  $('input').bind('keypress',function(e) {
-    let event = e || window.event;
-    let keycode = event.keyCode || event.which;
-    if(keycode == '13') $(this).siblings("button").click();
   });
 });
