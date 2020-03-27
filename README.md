@@ -8,7 +8,7 @@
 A single-page JavaScript app built with Webpack, to show images and image metada to the user, via Unsplash API.
 
 ### Instructions for Mac
-##### To run this project locally, you need: NPM, Node.js, and an API key from [Unsplash.com](Unsplash.com/developers). All of these are free.
+##### To run this project locally, you need: NPM, Node.js, and an API key from [Unsplash.com](https://unsplash.com/developers). All of these are free.
 
 * To run this project, you need NPM and Node.js installed on your machine. 
     1. Check is NPM is already installed: type `npm -v` in your CLI. If it returns a version number, you're good to go!
