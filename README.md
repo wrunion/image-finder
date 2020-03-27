@@ -1,6 +1,6 @@
 # Image Finder 
 
-#### Enter a keyword to see a beautiful image! Epicodus independent project to practice API calls, 3/24/2020
+#### Enter a keyword to see a beautiful image with metadata and links. Epicodus independent project, 3/24/2020
 
 #### By **Winter A. Runion**
 
@@ -38,20 +38,19 @@ A single-page JavaScript app built with Webpack, to show images and image metada
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Spec Description**  | User Input: | Output: |
-| **Spec Description**  | User Input: | Output: |
-| **Spec Description**  | User Input: | Output: |
-| **Spec Description**  | User Input: | Output: |
-| **Spec Description**  | User Input: | Output: |
-| **Spec Description**  | User Input: | Output: |
+| **Spec Description**  | User Input: Keyword | An image related to user keyword. |
+| **Spec Description**  | User Input: Keyword | Figcaption with photographer name and website (Unsplash.) |
+| **Spec Description**  | User Input: Keyword | Photographer name is linked to their Unsplash profile. |
+| **Spec Description**  | User Input: Keyword | The website name in caption is linked to Unsplash.com |
 
 ### Technologies Used
-* List
-* Them
-* Here
+* Node.js
+* Webpack
+* Babel
+* Bootstrap
 
 ### Known Bugs
-* None known at this time.
+* None
 
 ### Contact
 
