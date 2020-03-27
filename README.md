@@ -1,27 +1,39 @@
-# Find A Doctor
+# Image Finder 
 
-#### An app that matches users with the doctors they need. Epicodus independent project, 3/24/2020
+#### Enter a keyword to see a beautiful image! Epicodus independent project to practice API calls, 3/24/2020
 
 #### By **Winter A. Runion**
 
 ### Description
-A single-page JavaScript app built with Webpack, to find healthcare information via the [] API.
+A single-page JavaScript app built with Webpack, to show images and image metada to the user, via Unsplash API.
 
-### Dev Notes/To Do
-* Bootstrap isn't working with webpack. I inserted it into the index as a CDN - we need to go back and fix that.
-* The custom fonts are currently just linked in the index head section. 
-  * Find out if it's best practice to link them, or to download them.
-  * If it's best practice to DL, figure out how webkit manages fonts. 
-  * We probably need an extra extension for that.
-* If we haven't already, install an extension for managing images. I don't think we have one now.  
+### Instructions for Mac
+##### To run this project locally, you need: NPM, Node.js, and an API key from [Unsplash.com](Unsplash.com/developers). All of these are free.
 
+* To run this project, you need NPM and Node.js installed on your machine. 
+    1. Check is NPM is already installed: type `npm -v` in your CLI. If it returns a version number, you're good to go!
+    2. If you don't have NPM, download it [here](https://www.npmjs.com/get-npm)
+    3. You also need Node.js. Follow the instructions above to make sure you have it installed. If not, download it [here](https://www.npmjs.com/get-npm). (Note: this is the same link as above - NPM and Node.js usually come as a pair.)
+* Next, you need your own API key: 
+    1. Go to [unsplash.com/developers](https://unsplash.com/developers) and register as a new user.
+    2. Confirm your account and create a new project. (Save the project name for later.)
+    3. Unsplash will give you an "Access Key" and a "Secret Key." Save the "Access Key" somewhere - you'll need it in a minute.
+* Installing the project: 
+    1. In a terminal (bash recommended) clone this repo: 
+`git clone https://github.com/wrunion/image-finder`
+    2. Navitage into the directory: `cd image-finder`
 
-### Instructions
-
-* View the app [here]().
-* Other
-* Instructions
-* Here -->
+  3. In a terminal (bash recommended) run `npm install`
+* Personalizing the code:
+  1. Open the project files in your code editor of choice.
+  2. Add your unique API key (the "Access Key" you got earlier from Unsplash). This is crucial for the code to work.
+  3. Rename ".env-sample" to simply ".env" 
+  4. Open .env
+  5. Replace `YOUR_UNSPLASH_ACCESS_KEY` with your actual Unsplash Access Key. (Note: wrap it in quotes.)
+* Time to build! Run these two commands, and then you'll be in business:
+      `npm run build`
+      `npm run start`
+* Enjoy your new photo app! This code is licensed under the MIT license, so feel free to use as you see fit. See license specs for more details.
 
 ### Specs
 | Spec | Input | Output |
