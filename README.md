@@ -1,11 +1,13 @@
 # Image Finder 
 
-#### Enter a keyword to see a beautiful image with metadata and links. Epicodus independent project, 3/24/2020
+#### Enter a keyword to see an HD image with metadata and links. Epicodus independent project, 3/24/2020
 
 #### By **Winter A. Runion**
 
 ### Description
 A single-page JavaScript app built with Webpack, to show images and image metada to the user, via Unsplash API.
+
+![Screenshot of app screen with a text search box and a result box for images.](image-finder-demo.png)
 
 ### Instructions for Mac
 ##### To run this project locally, you need: NPM, Node.js, and an API key from [Unsplash.com](https://unsplash.com/developers). All of these are free.
@@ -35,14 +37,6 @@ A single-page JavaScript app built with Webpack, to show images and image metada
       `npm run start`
 * Enjoy your new photo app! This code is licensed under the MIT license, so feel free to use as you see fit. See license specs for more details.
 
-### Specs
-| Spec | Input | Output |
-| :-------------     | :------------- | :------------- |
-| **Spec Description**  | User Input: Keyword | An image related to user keyword. |
-| **Spec Description**  | User Input: Keyword | Figcaption with photographer name and website (Unsplash.) |
-| **Spec Description**  | User Input: Keyword | Photographer name is linked to their Unsplash profile. |
-| **Spec Description**  | User Input: Keyword | The website name in caption is linked to Unsplash.com |
-
 ### Technologies Used
 * Node.js
 * Webpack
@@ -54,7 +48,7 @@ A single-page JavaScript app built with Webpack, to show images and image metada
 
 ### Contact
 
-Contact me if you have questions or comments at winterrunion@gmail.com
+Feel free to submit a pull request if you find any issues.
 
 ### License
 _This software is licensed under the MIT license._
